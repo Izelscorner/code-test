@@ -1,43 +1,47 @@
-Coding Challenge: Infinite Scroll
+Klara Infinite Infinite Scroll Plugin
 =================================
 
-``` html
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Infinite scroller</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>Infinite scroller Izel</title>
+    <link rel="stylesheet" href="styles/style.css">
+    
   </head>
   <body>
-    <div id="list"></div>
+
+    <div id="list">
+      
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="scripts/infiniteScroll.js"></script>
+    <script src="scripts/script.js"></script>
+    
   </body>
 </html>
 ```
 
-Implement an infinite scrolling view to apply to the div `#list` that, upon reaching the bottom of the scroll area
-fetches further data and appends it. The number of elements coming from the data source can be very large (thousands)
-and needs to be loaded incrementally.
+infiteScroll.js is a jQuery based infinite scroll plug-in which provides ability to scroll infinitely.
+there is no eye candy since it's more functionality focused.
 
-The `#list`-div itself should have a fixed height with scrolling contents.
+Data source can be replaceable interface and callback function should be provided. 
 
-The list should have an indicator displaying where we are in the list.
+Known Issue on Mac OS
+
+When you scroll down and do refresh to a page scroll focus stay at the same place.
+
 
 ## Tools
 
-You can use whatever JavaScript frameworks (or just plain JavaScript, up to you), libraries, template languages, module
-systems etc. that you're familiar with.
+Jquery 
 
 ## Data Source
 
-You don't need to do real AJAX calls. Fake a data source by passing random objects to a callback upon each request.
-Something like this:
-
-``` js
-function getFakeData(offset, limit, callback) {
+function getFakeData(offset,startIndex, limit, callback) {
   var data = [];
-  for (var i=0; i<limit; i++) {
+  for (var i=startIndex; i<limit; i++) {
     var id = offset + i;
     data.push({
       id: id,
@@ -45,12 +49,8 @@ function getFakeData(offset, limit, callback) {
       description: "Description " + id
     });
   }
-  callback(null, data);
+  callback(data);
 };
 ```
 
-## Goals
 
--  The code should be written as a module, with an aim for reusability.
--  There might be different lists/tables with infinitely scrollable contents using your code
--  It should be possible to exchange the data source and rendering of items
