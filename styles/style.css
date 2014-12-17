@@ -1,0 +1,26 @@
+html ,body { height: 100%; }
+
+table,tr ,td , li ,body , html{
+	padding:0;
+	margin:0;
+}
+/* it can be fixed size or %100 I designed it to support 100% height in modern browsers.  */
+#list{
+	height:900px ;
+}
+
+#list ul {
+    height: 100%; 
+ 
+}
+#list ul li {
+    display: inline-block;
+    width:33%;
+}
+#list table{
+	width : 100%;
+}
+#list tr td{
+	width:33%;
+}
+
