@@ -1,6 +1,6 @@
 Klara Infinite Infinite Scroll Plugin
 =================================
-
+```
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +22,7 @@ Klara Infinite Infinite Scroll Plugin
   </body>
 </html>
 ```
-
+## Brief Description
 infiteScroll.js is a jQuery based infinite scroll plug-in which provides ability to scroll infinitely.
 there is no eye candy since it's more functionality focused.
 
@@ -38,7 +38,7 @@ When you scroll down and do refresh to a page scroll focus stay at the same plac
 Jquery 
 
 ## Data Source
-
+```
 function getFakeData(offset,startIndex, limit, callback) {
   var data = [];
   for (var i=startIndex; i<limit; i++) {
