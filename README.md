@@ -37,6 +37,10 @@ When you scroll down and do refresh to a page scroll focus stay at the same plac
 
 Jquery 
 
+## Pending Improvement
+
+Instead of using static list table type , template engine can be used to dynamically create list of rows.
+
 ## Data Source
 ```
 function getFakeData(offset,startIndex, limit, callback) {
